@@ -1,0 +1,56 @@
+html, body {
+    font-family: 'Poppins', sans-serif;
+    @apply dark:bg-stone-800;
+}
+
+h1 {
+    @apply text-4xl text-lime-600 font-medium;
+}
+
+.nav-link li {
+    @apply cursor-pointer text-lime-600 hover:scale-125 transition-all;
+}
+
+.btn {
+    @apply py-4 px-6 bg-lime-600 rounded-lg text-white hover:bg-lime-500 transition-all focus:outline-none;
+}
+
+.btn-second {
+    @apply bg-yellow-500 hover:bg-yellow-400;
+}
+
+.btn-danger {
+    @apply bg-rose-500 hover:bg-rose-400;
+}
+
+.projects {
+    @apply flex flex-col items-center;
+}
+
+.projects h2 {
+    @apply text-lg mb-6 text-stone-600;
+}
+
+.card {
+    @apply w-[150px] h-[150px] flex justify-center items-center rounded-xl bg-lime-700 text-white hover:cursor-pointer hover:scale-105 transition-all mb-6;
+}
+
+.card h3 {
+    @apply font-medium;
+}
+
+.card-plugins {
+    @apply bg-lime-800;
+}
+
+.card-upcoming {
+    @apply bg-stone-500 hover:scale-100 hover:cursor-default;
+}
+.card-upcoming h3 {
+    @apply text-stone-700;
+}
+
+
+.tooltip .tooltip-inner {
+    @apply mt-4 bg-lime-600 text-white py-2 px-4 rounded-xl font-medium z-50;
+}
