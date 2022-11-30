@@ -1,7 +1,7 @@
 <template>
-   <div>
-       <p>xasdd</p>
+   <div id="configuration-app" class="w-screen bg-black py-64">
+       <ConfigurationHero></ConfigurationHero>
 
-       <PartialsHero></PartialsHero>
+       <ConfigurationModal></ConfigurationModal>
    </div>
 </template>

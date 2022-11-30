@@ -1,56 +1,86 @@
 html, body {
     font-family: 'Poppins', sans-serif;
-    @apply dark:bg-stone-800;
+    /* @apply dark:bg-stone-800; */
+    /* @apply bg-stone-900; */
 }
 
 h1 {
-    @apply text-4xl text-lime-600 font-medium;
+    @apply text-4xl text-rose-600 font-semibold;
 }
 
-.nav-link li {
-    @apply cursor-pointer text-lime-600 hover:scale-125 transition-all;
+.app-container {
+    @apply container mx-auto;
+}
+
+.nav-link li,
+.footer-link li {
+    @apply cursor-pointer text-rose-500 font-medium hover:text-rose-600 hover:scale-105 transition-all;
+}
+
+.footer-link li {
+    @apply text-white hover:text-gray-100 hover:scale-125;
+}
+
+.absolute-center {
+    @apply absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2;
+}
+
+.absolute-center-x {
+    @apply absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2;
+}
+
+.absolute-center-y {
+    @apply absolute top-1/2 transform -translate-x-1/2 -translate-y-1/2;
+}
+
+.fixed-center {
+    @apply fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2;
 }
 
 .btn {
-    @apply py-4 px-6 bg-lime-600 rounded-lg text-white hover:bg-lime-500 transition-all focus:outline-none;
+    @apply min-w-[200px] rounded-3xl px-4 py-3 text-center cursor-pointer select-none hover:scale-105 transition-all;
 }
 
-.btn-second {
-    @apply bg-yellow-500 hover:bg-yellow-400;
+.btn-primary {
+    @apply gradient text-white;
 }
 
-.btn-danger {
-    @apply bg-rose-500 hover:bg-rose-400;
+.btn-secondary {
+    @apply bg-gray-200 text-black;
 }
 
-.projects {
-    @apply flex flex-col items-center;
+.text-gradient {
+    @apply text-transparent bg-clip-text gradient;
 }
 
-.projects h2 {
-    @apply text-lg mb-6 text-stone-600;
+.gradient {
+    @apply bg-gradient-to-r from-rose-500 via-pink-700 to-pink-900;
 }
 
-.card {
-    @apply w-[150px] h-[150px] flex justify-center items-center rounded-xl bg-lime-700 text-white hover:cursor-pointer hover:scale-105 transition-all mb-6;
+.reverse-gradient {
+    @apply bg-gradient-to-l from-rose-500 via-pink-700 to-pink-900;
 }
 
-.card h3 {
-    @apply font-medium;
+.ml-auto {
+    margin-left: auto !important;
 }
 
-.card-plugins {
-    @apply bg-lime-800;
+.mt-auto {
+    margin-top: auto !important;
 }
 
-.card-upcoming {
-    @apply bg-stone-500 hover:scale-100 hover:cursor-default;
-}
-.card-upcoming h3 {
-    @apply text-stone-700;
+.modal {
+    @apply fixed-center p-6 rounded-xl border border-rose-600;
+    background-color: RGBA(255,255,255,0.95);
+    width: 90vw;
+    height: 90vh;
+    z-index: 999;
 }
 
+.modal-list-item {
+    @apply bg-white border border-rose-400 rounded-lg px-4 py-2 mb-4 cursor-pointer transition-all hover:bg-rose-500;
+}
 
-.tooltip .tooltip-inner {
-    @apply mt-4 bg-lime-600 text-white py-2 px-4 rounded-xl font-medium z-50;
+.modal-list-item-active {
+    @apply bg-rose-600 text-white;
 }

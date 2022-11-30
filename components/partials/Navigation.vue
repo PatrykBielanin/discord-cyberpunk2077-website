@@ -1,34 +1,26 @@
 <template>
-    <div class="text-xl mt-0 fixed w-full z-10 top-0 bg-white pb-2 px-8 xl:px-0 dark:bg-stone-800">
-        <div class="container flex justify-center items-center flex-col sm:flex-row sm:justify-between mt-10 flex-wrap">
-            <div class="flex justify-center items-center cursor-pointer dark:text-white" @click="toggleDarkMode()">
-                <h2 class="mr-4 select-none">pbielanin.pl</h2>
-                <FontAwesomeIcon v-if="!darkMode" :icon="['fas', 'moon']"></FontAwesomeIcon>
+    <div
+        id="navigation"
+        class="h-[10vh] text-xl mt-0 fixed w-full z-10 top-0 left-0 bg-white pb-2 px-8 xl:px-0 dark:bg-stone-800 border-b transition-all duration-300"
+        :class="{'border-rose-300': hasScrolled, 'border-white': !hasScrolled}"
+    >
+        <div class="container flex justify-center items-center mt-10 mx-auto">
+            <ul class="nav-link flex items-center space-x-6 w-full">
+                <li
+                    v-for="i in navigationItems"
+                    @click.prevent="toggleScroll(i.id)"
+                    class="select-none"
+                    :class="{'ml-auto': !i.name}"
+                >
+                    <template v-if="i.name">
+                        {{ i.name }}
+                    </template>
 
-                <FontAwesomeIcon v-else :icon="['fas', 'sun']"></FontAwesomeIcon>
-            </div>
-            <ul class="nav-link flex items-center space-x-6 mt-6 sm:mt-0">
-                <p class="text-sm text-lime-600">
-                    Contact
-                    <FontAwesomeIcon :icon="['fas', 'angle-up']" class="rotate-90"></FontAwesomeIcon>
-                </p>
-                <li>
-                    <a href="https://github.com/PatrykBielanin" target="_blank">
-                        <FontAwesomeIcon :icon="['fab', 'github']"></FontAwesomeIcon>
-                    </a>
-                </li>
-                <li>
-                    <FontAwesomeIcon :icon="['fab', 'discord']" v-tooltip.bottom="'bielak#2500'"></FontAwesomeIcon>
-                </li>
-                <li>
-                    <a href="https://twitter.com/PatrykBielanin" target="_blank">
-                        <FontAwesomeIcon :icon="['fab', 'twitter']"></FontAwesomeIcon>
-                    </a>
-                </li>
-                <li>
-                    <a href="mailto:patrykbielanin@gmail.com" target="_blank">
-                        <FontAwesomeIcon :icon="['fas', 'at']"></FontAwesomeIcon>
-                    </a>
+                    <template v-else>
+                        <a href="https://www.buymeacoffee.com/patrykbielanin">
+                            <img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=patrykbielanin&button_colour=F43F5E&font_colour=FFFFFF&font_family=Poppins&outline_colour=000000&coffee_colour=ffffff" />
+                        </a>
+                    </template>
                 </li>
             </ul>
         </div>
@@ -36,25 +28,46 @@
 </template>
 
 <script>
+    import { mapActions, mapGetters } from 'vuex'
+
     export default {
         data() {
             return {
-                darkMode: false
+                darkMode: false,
+                hasScrolled: false
             }
         },
         methods: {
+            ...mapActions({
+                scrollToSection: 'app/scrollToSection',
+            }),
             toggleDarkMode() {
                 this.darkMode = !this.darkMode
 
                 this.$localForage.setItem('darkMode', this.darkMode)
                 return
+            },
+            toggleScroll(id) {
+                this.scrollToSection({id})
+            },
+            checkIfScrolled(offset) {
+                return offset > 100 ? this.hasScrolled = true : this.hasScrolled = false
             }
+        },
+        computed: {
+            ...mapGetters({
+                navigationItems: 'app/getNavigationItems'
+            })
         },
         mounted() {
             this.$localForage.getItem('darkMode').then((value) => {
                 if (value !== false) {
-                    this.darkMode = true
+                    this.darkMode = false
                 }
+            })
+
+            window.addEventListener('scroll', () => {
+                this.checkIfScrolled(window.scrollY)
             })
         },
         head() {

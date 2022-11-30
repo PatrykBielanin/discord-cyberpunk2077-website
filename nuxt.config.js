@@ -4,7 +4,7 @@ export default {
   buildDir: process.cwd() + '/.nuxt/',
 
   head: {
-    title: 'pbielanin - front-end developer personal website',
+    title: 'Cyberpunk 2077 - Better Discord Theme',
     htmlAttrs: {
       lang: 'en'
     },
@@ -34,17 +34,22 @@ export default {
       '@/assets/css/style.css'
   ],
 
+  components: [
+        {
+            path: '@/components',
+            pathPrefix: false,
+        },
+    ],
+
   fontawesome: {
     icons: {
       solid: [
         'faAt',
         'faAngleUp',
         'faStar',
-        'faMugHot',
-        'faCalendar',
-        'faCalendarCheck',
         'faMoon',
-        'faSun'
+        'faSun',
+        'faTimes'
       ],
       brands: [
         'faGithub',
@@ -59,15 +64,13 @@ export default {
       '@/plugins/axios.js'
   ],
 
-  components: true,
-
   buildModules: [
       '@nuxtjs/fontawesome',
   ],
 
   modules: [
       ['@nuxtjs/localforage', {
-          name: 'pbielanin'
+          name: 'Cyberpunk2077-Theme-Discord'
       }],
       '@nuxtjs/tailwindcss',
       '@nuxtjs/axios'

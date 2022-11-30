@@ -1,6 +1,7 @@
 <template>
-  <div class="flex justify-center">
+  <div class="flex flex-col items-center justify-between min-h-screen overflow-x-hidden">
       <AppPage></AppPage>
+      <Footer></Footer>
   </div>
 </template>
 
