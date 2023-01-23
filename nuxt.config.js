@@ -70,15 +70,21 @@ export default {
 
   buildModules: [
       '@nuxtjs/fontawesome',
+      '@nuxt/postcss8'
   ],
 
   modules: [
-      '@nuxtjs/tailwindcss',
       '@nuxtjs/axios',
       '@nuxtjs/toast',
   ],
 
   build: {
+      postcss: {
+      plugins: {
+        tailwindcss: {},
+        autoprefixer: {},
+      },
+    }
   },
 
   toast: {
