@@ -1,5 +1,5 @@
 export const state = () => ({
-    open: true,
+    open: false,
     activeItem: 0,
     listItems: [
         {

@@ -12,12 +12,12 @@ export default {
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { name: 'format-detection', content: 'telephone=no' },
-      { name:'description', content: 'Personal website of Patryk Bielanin front-end developer - vue and nuxt plugins, discord themes - check out!' },
-      { name:'og:title', content: 'Patryk Bielanin - front-end developer personal website' },
+      { name:'description', content: 'Better discord theme inspired by Cyberpunk 2077 User Interface. Simple configuration tool to custom your theme and improve your discord experience.' },
+      { name:'og:title', content: 'Cyberpunk 2077 Better Discord Theme - discord theme inspired by in game UI' },
       { name:'og:type', content: 'website' },
       { name:'og:author', content: '@PatrykBielanin' },
-      { name:'og:description', content: 'Personal website of Patryk Bielanin front-end developer - vue and nuxt plugins, discord themes - check out!' },
-      { property: 'og:url', content: 'https://pbielanin.pl' },
+      { name:'og:description', content: 'Better discord theme inspired by Cyberpunk 2077 User Interface. Simple configuration tool to custom your theme and improve your discord experience.' },
+      { property: 'og:url', content: 'https://cyberpunk.pbielanin.pl' },
       { name:'twitter:site', content: '@PatrykBielanin' },
       { name:'twitter:title', content: 'pbielanin' },
       { name:'twitter:card', content: 'summary_large_image' },
@@ -49,7 +49,10 @@ export default {
         'faStar',
         'faMoon',
         'faSun',
-        'faTimes'
+        'faTimes',
+        'faThumbsUp',
+        'faDownload',
+        'faGear'
       ],
       brands: [
         'faGithub',
@@ -61,7 +64,8 @@ export default {
 
   plugins: [
       '@/plugins/v-tooltip.js',
-      '@/plugins/axios.js'
+      '@/plugins/axios.js',
+      '@/plugins/vue-number-animation.js'
   ],
 
   buildModules: [
@@ -69,13 +73,40 @@ export default {
   ],
 
   modules: [
-      ['@nuxtjs/localforage', {
-          name: 'Cyberpunk2077-Theme-Discord'
-      }],
       '@nuxtjs/tailwindcss',
-      '@nuxtjs/axios'
+      '@nuxtjs/axios',
+      '@nuxtjs/toast',
   ],
 
   build: {
+  },
+
+  toast: {
+      position: 'top-center',
+      theme: "outline",
+      duration: 4000,
+      register: [
+          {
+              name: 'configurationTool',
+              message: 'Configuration tool is still under development!',
+              options: {
+                  type: 'error'
+              }
+          },
+          {
+              name: 'coppiedText',
+              message: 'Text copied to clipboard!',
+              options: {
+                  type: 'success'
+              }
+          },
+          {
+              name: 'errorCustom',
+              message: 'Something went wrong! Please try again.',
+              options: {
+                  type: 'error'
+              }
+          }
+      ]
   }
 }

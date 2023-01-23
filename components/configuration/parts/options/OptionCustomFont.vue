@@ -12,6 +12,10 @@
             </button>
         </div>
 
+        <NuxtExampleLayout example="mdc/inline-component" repo="nuxt/content">
+            <ContentDoc path="/" class="prose text-left" />
+        </Nuxtexamplelayout>
+
         <!-- <ConfigurationModalSnippet>
             <p>xdddd</p>
         </ConfigurationModalSnippet> -->
@@ -20,11 +24,19 @@
 
 <script>
     export default {
-        data() {
+        async asyncData ({ $content }) {
+            const page = await $content('home').fetch()
             return {
-                link: '',
-                name: ''
+              page,
+              link: '',
+              name: ''
             }
-        }
+        },
+        // data() {
+        //     return {
+        //         link: '',
+        //         name: ''
+        //     }
+        // }
     }
 </script>

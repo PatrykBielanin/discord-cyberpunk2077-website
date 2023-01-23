@@ -1,5 +1,5 @@
 <template>
-    <div class="flex flex-col align-center dark:bg-stone-800">
+    <div class="flex flex-col align-center">
         <Navigation></Navigation>
 
         <HomeApp></HomeApp>
@@ -9,3 +9,18 @@
         <FaqApp class="mt-48"></FaqApp>
     </div>
 </template>
+
+<script>
+    import { mapActions } from 'vuex'
+
+    export default {
+        methods: {
+            ...mapActions({
+                'repoData': 'app/repoData'
+            })
+        },
+        mounted() {
+           this.repoData()
+       }
+    }
+</script>

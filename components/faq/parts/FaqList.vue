@@ -1,5 +1,5 @@
 <template>
-   <div class="app-container">
+   <div class="app-container px-10">
        <h2 class="text-3xl mb-4 font-semibold text-gradient">FAQ</h2>
        <FaqItem v-for="(i, index) in questions" :item="i" :index="index" :key="index"></FaqItem>
    </div>
