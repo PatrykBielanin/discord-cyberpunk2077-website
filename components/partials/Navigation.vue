@@ -17,11 +17,11 @@
                     </template>
 
                     <template v-else>
-                        <a href="https://www.buymeacoffee.com/patrykbielanin" class="flex justify-end">
+                        <a href="https://www.buymeacoffee.com/patrykbielanin" target="_blank" class="flex justify-end">
                             <img
                                 src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=patrykbielanin&button_colour=F43F5E&font_colour=FFFFFF&font_family=Poppins&outline_colour=000000&coffee_colour=ffffff"
                                 class="w-[85%] lg:w-full"
-                            />
+                            >
                         </a>
                     </template>
                 </li>

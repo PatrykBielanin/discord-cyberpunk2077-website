@@ -1,5 +1,5 @@
 <template>
-   <div class="app-container flex flex-col items-center justify-center min-h-screen mt-[120px] pt-10">
+   <div class="app-container flex flex-col items-center justify-center min-h-screen mt-[120px] px-10 pt-10 lg:pt-24">
        <div class="text-center">
            <p class="text-[30px] md:text-[44px] lg:text-[52px] 2xl:text-[64px]">Improve your Discord experience</p>
            <p class="text-[30px] md:text-[44px] lg:text-[52px] 2xl:text-[64px] font-semibold text-gradient">Cyberpunk 2077 Theme</p>
