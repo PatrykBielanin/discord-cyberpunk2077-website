@@ -65,7 +65,8 @@ export default {
   plugins: [
       '@/plugins/v-tooltip.js',
       '@/plugins/axios.js',
-      '@/plugins/vue-number-animation.js'
+      '@/plugins/vue-number-animation.js',
+      '@/plugins/vue-code-highlight.js'
   ],
 
   buildModules: [
