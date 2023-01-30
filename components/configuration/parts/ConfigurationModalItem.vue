@@ -1,5 +1,5 @@
 <template>
-    <div class="modal-item space-y-4 pt-4" v-if="item">
+    <div class="modal-item space-y-4 pt-4 w-full max-w-full" v-if="item">
         <h2 class="text-2xl text-rose-600 font-semibold">{{item.name}}</h2>
 
         <p>{{item.content}}</p>
@@ -8,10 +8,6 @@
             <template #options>
                  <component :is="item.component"></component>
             </template>
-
-            <!-- <template #options>
-                 <component :is="item.component"></component>
-            </template> -->
         </ConfigurationModalOption>
     </div>
 </template>

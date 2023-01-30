@@ -18,6 +18,7 @@ export default {
       { name:'og:author', content: '@PatrykBielanin' },
       { name:'og:description', content: 'Better discord theme inspired by Cyberpunk 2077 User Interface. Simple configuration tool to custom your theme and improve your discord experience.' },
       { property: 'og:url', content: 'https://cyberpunk.pbielanin.pl' },
+      { property: 'og:image', content: 'https://i.imgur.com/gpBEPQy.png' },
       { name:'twitter:site', content: '@PatrykBielanin' },
       { name:'twitter:title', content: 'pbielanin' },
       { name:'twitter:card', content: 'summary_large_image' },
@@ -49,7 +50,6 @@ export default {
         'faStar',
         'faMoon',
         'faSun',
-        'faTimes',
         'faThumbsUp',
         'faDownload',
         'faGear'
@@ -58,6 +58,9 @@ export default {
         'faGithub',
         'faDiscord',
         'faTwitter'
+      ],
+      regular: [
+          'faTimesCircle'
       ]
     }
   },
@@ -95,7 +98,7 @@ export default {
       register: [
           {
               name: 'configurationTool',
-              message: 'Configuration tool is still under development!',
+              message: 'Configuration tool not avaiable on mobile devices!',
               options: {
                   type: 'error'
               }

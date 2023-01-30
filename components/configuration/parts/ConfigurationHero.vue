@@ -34,8 +34,11 @@
                 'setModalOpen': 'configuration/setModalOpen'
             }),
             toggleModal(){
-                this.$toast.global.configurationTool();
-                // this.setModalOpen()
+                if(window.innerWidth <= 983){
+                    return this.$toast.global.configurationTool();
+                }
+
+                this.setModalOpen()
             }
         }
     }
