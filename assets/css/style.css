@@ -47,6 +47,7 @@ h1 {
 
 .btn-primary {
     @apply gradient text-white;
+    --tw-gradient-to: #831843 !important;
 }
 
 .btn-secondary {
