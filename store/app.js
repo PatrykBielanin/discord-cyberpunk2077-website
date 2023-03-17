@@ -5,10 +5,6 @@ export const state = () => ({
         { name: 'FAQ', id: 'faq-app' },
         { name: null, id: null }
     ],
-    repo: {
-        version: null,
-        stars: 10
-    },
     website: {}
 })
 
@@ -21,12 +17,6 @@ export const actions = {
         }
 
         return window.scrollTo({top: section, behavior: 'smooth'});
-    },
-
-    repoData({commit}) {
-        this.$axios.get('https://api.github.com/repos/PatrykBielanin/discord-cyberpunk2077-theme').then((data) => {
-            commit('setRepoDate', data.data);
-        })
     }
 }
 
@@ -39,9 +29,5 @@ export const mutations = {
 export const getters = {
     getNavigationItems(state) {
         return state.navigationItems
-    },
-
-    getRepoData(state) {
-        return state.repo
     }
 }

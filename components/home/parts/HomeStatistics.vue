@@ -11,28 +11,32 @@
         </div>
 
         <div class="flex justify-center items-center space-x-2" v-if="repoData">
-            <HomeCounter :to="repoData.stars" :external="true"></HomeCounter>
+            <HomeCounter v-if="stars" :to="stars" :external="external"></HomeCounter>
             <FontAwesomeIcon :icon="['fas', 'star']" class="text-amber-400"></FontAwesomeIcon>
         </div>
     </div>
 </template>
 
 <script>
-    import { mapGetters } from 'vuex'
-
     export default {
         data(){
             return {
-                stars: null
+                stars: null,
+                external: true
             }
         },
-        computed: {
-            ...mapGetters({
-                getRepoData: 'app/getRepoData'
-            }),
+        methods: {
             repoData(){
-                return this.getRepoData
+                this.$axios.get('https://api.github.com/repos/PatrykBielanin/discord-cyberpunk2077-theme').then((data) => {
+                    this.stars = data.data.stargazers_count
+                }).catch(() => {
+                    this.stars = 10
+                    this.external = false
+                })
             }
+        },
+        mounted(){
+            this.repoData()
         }
     }
 </script>
