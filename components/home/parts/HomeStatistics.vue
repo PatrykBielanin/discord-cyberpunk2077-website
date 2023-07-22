@@ -1,12 +1,12 @@
 <template>
     <div class="flex justify-center items-center mt-5 mb-15 space-x-8">
         <div class="flex justify-center items-center space-x-2">
-            <HomeCounter :to="50000"></HomeCounter>
+            <HomeCounter :to="100000"></HomeCounter>
             <FontAwesomeIcon :icon="['fas', 'download']" class="text-rose-500"></FontAwesomeIcon>
         </div>
 
         <div class="flex justify-center items-center space-x-2">
-            <HomeCounter :to="50"></HomeCounter>
+            <HomeCounter :to="100"></HomeCounter>
             <FontAwesomeIcon :icon="['fas', 'thumbs-up']" class="text-sky-600"></FontAwesomeIcon>
         </div>
 

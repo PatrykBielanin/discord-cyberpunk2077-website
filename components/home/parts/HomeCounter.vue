@@ -33,7 +33,7 @@
         data(){
             return {
                 from: 0,
-                duration: 4,
+                duration: 3,
                 completed: false
             }
         },
