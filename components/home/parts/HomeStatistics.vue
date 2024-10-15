@@ -1,12 +1,12 @@
 <template>
     <div class="flex justify-center items-center mt-5 mb-15 space-x-8">
         <div class="flex justify-center items-center space-x-2">
-            <HomeCounter :to="100000"></HomeCounter>
+            <HomeCounter :to="150000"></HomeCounter>
             <FontAwesomeIcon :icon="['fas', 'download']" class="text-rose-500"></FontAwesomeIcon>
         </div>
 
         <div class="flex justify-center items-center space-x-2">
-            <HomeCounter :to="100"></HomeCounter>
+            <HomeCounter :to="200"></HomeCounter>
             <FontAwesomeIcon :icon="['fas', 'thumbs-up']" class="text-sky-600"></FontAwesomeIcon>
         </div>
 
@@ -30,7 +30,7 @@
                 this.$axios.get('https://api.github.com/repos/PatrykBielanin/discord-cyberpunk2077-theme').then((data) => {
                     this.stars = data.data.stargazers_count
                 }).catch(() => {
-                    this.stars = 10
+                    this.stars = 50
                     this.external = false
                 })
             }
